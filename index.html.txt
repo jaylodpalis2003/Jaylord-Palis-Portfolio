@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jaylord Palis | Creative Designer</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Poppins',sans-serif;background:#0b0b0f;color:#fff;overflow-x:hidden}
+
+/* NAV */
+nav{
+  position:fixed;
+  top:0;
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 40px;
+  background:rgba(0,0,0,0.6);
+  backdrop-filter:blur(12px);
+  z-index:1000
+}
+nav h2{font-weight:700;letter-spacing:2px}
+nav ul{display:flex;gap:25px;list-style:none}
+nav a{color:#ccc;text-decoration:none;font-size:0.9rem;transition:.3s}
+nav a:hover{color:#fff}
+
+/* HERO */
+header{
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  background:radial-gradient(circle at top,#1a1a2e,#0b0b0f)
+}
+header h1{
+  font-size:3.5rem;
+  background:linear-gradient(90deg,#6c63ff,#a855f7);
+  -webkit-background-clip:text;
+  color:transparent
+}
+header p{margin-top:10px;color:#aaa}
+
+.btn{
+  margin-top:25px;
+  padding:14px 28px;
+  border-radius:12px;
+  background:linear-gradient(90deg,#6c63ff,#a855f7);
+  color:#fff;
+  text-decoration:none;
+  transition:.3s
+}
+.btn:hover{
+  transform:translateY(-3px);
+  box-shadow:0 10px 30px rgba(108,99,255,0.5)
+}
+
+/* SECTIONS */
+section{
+  padding:100px 20px;
+  max-width:1100px;
+  margin:auto;
+  opacity:0;
+  transform:translateY(60px);
+  transition:.8s
+}
+section.show{
+  opacity:1;
+  transform:translateY(0)
+}
+h2{margin-bottom:20px;font-size:2rem}
+
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:30px
+}
+.card{
+  background:#111;
+  border-radius:18px;
+  overflow:hidden;
+  transition:.4s;
+}
+.card img{
+  width:100%;
+  display:block
+}
+.card:hover{
+  transform:translateY(-12px) scale(1.02)
+}
+.card-content{
+  padding:20px
+}
+
+/* STATS */
+.stats{
+  display:flex;
+  justify-content:space-around;
+  text-align:center;
+  margin-top:40px
+}
+.stats h3{
+  font-size:2rem;
+  color:#6c63ff
+}
+
+/* TESTIMONIAL */
+.testimonial{
+  background:#111;
+  padding:30px;
+  border-radius:15px;
+  margin-top:40px
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:30px;
+  color:#666
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <h2>JP</h2>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#portfolio">Work</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<header>
+  <h1>Creative Digital Designer</h1>
+  <p>Building premium visuals that elevate brands</p>
+  <a href="#portfolio" class="btn">View Portfolio</a>
+</header>
+
+<section id="about">
+  <h2>About</h2>
+  <p>I design high-end visuals focused on branding, ads, and digital presence. My work blends strategy with aesthetics to deliver results.</p>
+
+  <div class="stats">
+    <div><h3>50+</h3><p>Projects</p></div>
+    <div><h3>20+</h3><p>Clients</p></div>
+    <div><h3>3+</h3><p>Years</p></div>
+  </div>
+</section>
+
+<section id="portfolio">
+  <h2>Selected Work</h2>
+  <div class="grid">
+    <div class="card">
+      <img src="https://via.placeholder.com/500x350">
+      <div class="card-content">
+        <h3>Brand Campaign</h3>
+        <p>Luxury skincare visuals</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://via.placeholder.com/500x350">
+      <div class="card-content">
+        <h3>Logo Identity</h3>
+        <p>Coffee brand system</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://via.placeholder.com/500x350">
+      <div class="card-content">
+        <h3>Product Ads</h3>
+        <p>High-converting creatives</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Client Feedback</h2>
+  <div class="testimonial">
+    <p>“Amazing work! The designs increased our engagement instantly.”</p>
+    <strong>- Client Name</strong>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p>Email: your@email.com</p>
+  <a href="#" class="btn">Hire Me</a>
+</section>
+
+<footer>
+  <p>© 2026 Jaylord Palis</p>
+</footer>
+
+<script>
+const sections=document.querySelectorAll('section');
+window.addEventListener('scroll',()=>{
+  sections.forEach(sec=>{
+    const top=window.scrollY;
+    const offset=sec.offsetTop-300;
+    if(top>offset){sec.classList.add('show')}
+  })
+})
+</script>
+
+</body>
+</html>
